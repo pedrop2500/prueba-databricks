@@ -1,0 +1,33 @@
+[project]
+default_environment = "PRO"
+
+[compute.mi_workspace]
+host = "https://dbc-20aaa784-c47e.cloud.databricks.com"
+mode = "serverless"
+auth = "browser"
+
+[environments.PRE]
+catalog = "samples"
+schema = "nyctaxi"
+
+[environments.PRE.databases]
+principal = "samples.nyctaxi"
+
+[environments.PRE.tables]
+viajes_demo = { database = "principal", table = "trips" }
+
+[environments.PRE.variables]
+limite_filas = 50
+
+[environments.PRO]
+catalog = "samples"
+schema = "nyctaxi"
+
+[environments.PRO.databases]
+principal = "samples.nyctaxi"
+
+[environments.PRO.tables]
+viajes_demo = { database = "principal", table = "trips" }
+
+[environments.PRO.variables]
+limite_filas = 200

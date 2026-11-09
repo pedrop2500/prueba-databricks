@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prueba-databricks"
+version = "0.1.0"
+description = "Un mismo proyecto Spark para desarrollo local y jobs Databricks"
+requires-python = ">=3.11,<3.12"
+dependencies = ["tomli>=2,<3; python_version < '3.11'"]
+
+[project.optional-dependencies]
+local = ["databricks-connect>=15.4.10,<15.5"]
+notebook = ["prueba-databricks[local]", "ipykernel>=6,<8", "pandas>=2.2,<3", "ipywidgets>=8,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

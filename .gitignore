@@ -1,0 +1,12 @@
+.venv/
+.bootstrap/
+.databricks/
+.env
+.databrickscfg
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+.DS_Store
